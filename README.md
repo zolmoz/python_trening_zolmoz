@@ -1,1 +1,1 @@
-# python_trening_zolmoz
+# Ropository for Python Traning
