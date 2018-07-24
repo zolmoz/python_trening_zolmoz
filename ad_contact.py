@@ -121,7 +121,7 @@ class ad_contact(unittest.TestCase):
         self.newcontact(wd, firstname="Mia", middlename="Rk", lastname="Rose", nickename="Rose", title="Rosw comp",
                         company="Rose", address="ertyui", home="1234", mobile="5678", work="90123", fax="4567",
                         email1="1admin@z.ru", email2="2admin@z.ru", email3="3admin@z.ru", homepage="ya.ry", selectbday="3",
-                        selectbmonthe="4",byear="1989", selectaday="8",selectamonthe="12",ayear="2000", address2="dferesdfe", phone2="rererr", notes="fgwewerewrw")
+                        selectbmonthe="4", byear="1989", selectaday="8", selectamothe="12", ayear="2000", address2="dferesdfe", phone2="rererr", notes="fgwewerewrw")
 
         self.logout(wd)
 
