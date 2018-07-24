@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from selenium.webdriver.firefox.webdriver import WebDriver
 import unittest
+from selenium.webdriver.support.ui import Select
 
 def is_alert_present(wd):
     try:
@@ -19,7 +20,8 @@ class ad_contact(unittest.TestCase):
         wd.find_element_by_link_text("Logout").click()
 
     def newcontact(self, wd, firstname, middlename, lastname, nickename, title, company, address, home, mobile, work,
-                   fax, email1, email2, email3, homepage, byear, ayear, address2, phone2, notes):
+                   fax, email1, email2, email3, homepage, byear, ayear, address2, phone2, notes, selectbday,
+                   selectbmonthe, selectaday, selectamothe):
         # open add contact form
         wd.find_element_by_link_text("add new").click()
         # fill contact
@@ -68,17 +70,17 @@ class ad_contact(unittest.TestCase):
         wd.find_element_by_name("homepage").click()
         wd.find_element_by_name("homepage").clear()
         wd.find_element_by_name("homepage").send_keys(homepage)
-        if not wd.find_element_by_xpath("//div[@id='content']/form/select[1]//option[8]").is_selected():
-            wd.find_element_by_xpath("//div[@id='content']/form/select[1]//option[8]").click()
-        if not wd.find_element_by_xpath("//div[@id='content']/form/select[2]//option[9]").is_selected():
-            wd.find_element_by_xpath("//div[@id='content']/form/select[2]//option[9]").click()
+        bday = Select(wd.find_element_by_xpath("//div[@id='content']/form/select[1]"))
+        bday.select_by_index(selectbday)
+        bmonthe = Select(wd.find_element_by_xpath("//div[@id='content']/form/select[2]"))
+        bmonthe.select_by_index(selectbmonthe)
         wd.find_element_by_name("byear").click()
         wd.find_element_by_name("byear").clear()
         wd.find_element_by_name("byear").send_keys(byear)
-        if not wd.find_element_by_xpath("//div[@id='content']/form/select[3]//option[10]").is_selected():
-            wd.find_element_by_xpath("//div[@id='content']/form/select[3]//option[10]").click()
-        if not wd.find_element_by_xpath("//div[@id='content']/form/select[4]//option[7]").is_selected():
-            wd.find_element_by_xpath("//div[@id='content']/form/select[4]//option[7]").click()
+        aday = Select(wd.find_element_by_xpath("//div[@id='content']/form/select[3]"))
+        aday.select_by_index(selectaday)
+        amonthe = Select(wd.find_element_by_xpath("//div[@id='content']/form/select[4]"))
+        amonthe.select_by_index(selectamothe)
         wd.find_element_by_name("ayear").click()
         wd.find_element_by_name("ayear").clear()
         wd.find_element_by_name("ayear").send_keys(ayear)
@@ -118,8 +120,9 @@ class ad_contact(unittest.TestCase):
         self.login(wd, username="admin", password="secret")
         self.newcontact(wd, firstname="Mia", middlename="Rk", lastname="Rose", nickename="Rose", title="Rosw comp",
                         company="Rose", address="ertyui", home="1234", mobile="5678", work="90123", fax="4567",
-                        email1="1admin@z.ru", email2="2admin@z.ru", email3="3admin@z.ru", homepage="ya.ry",
-                        byear="1989", ayear="200", address2="dferesdfe", phone2="rererr", notes="fgwewerewrw")
+                        email1="1admin@z.ru", email2="2admin@z.ru", email3="3admin@z.ru", homepage="ya.ry", selectbday="3",
+                        selectbmonthe="4",byear="1989", selectaday="8",selectamonthe="12",ayear="2000", address2="dferesdfe", phone2="rererr", notes="fgwewerewrw")
+
         self.logout(wd)
 
     def tearDown(self):
