@@ -4,6 +4,7 @@ from fixture.group import GroupHelper
 from fixture.contacts import ContactHelper
 
 
+
 class Application:
     def __init__(self):
         self.wd = WebDriver(capabilities={"marionette": False})
@@ -11,6 +12,7 @@ class Application:
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contacts = ContactHelper(self)
+
 
     def open_home_page(self):
         wd = self.wd
