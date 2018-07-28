@@ -45,6 +45,17 @@ class GroupHelper:
         wd.find_element_by_name("delete").click()
         self.return_to_groups_page()
 
+    def delete_all_groupe(self):
+        wd = self.app.wd
+        self.open_group_page()
+        # selest first groupe
+        elements = wd.find_elements_by_name("selected[]")
+        for e in elements:
+            e.click()
+        # submit deletion
+        wd.find_element_by_name("delete").click()
+        self.return_to_groups_page()
+
     def modefi_first_groupe(self, groupe):
         wd = self.app.wd
         self.open_group_page()
