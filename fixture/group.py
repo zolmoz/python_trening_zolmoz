@@ -11,12 +11,11 @@ class GroupHelper:
         # return to groupse page
         wd.find_element_by_link_text("groups").click()
 
-    def create(self, groupe):
-        wd = self.app.wd
-        self.open_group_page()
-        # init group creation
-        wd.find_element_by_name("new").click()
+
+
+    def fild_contact (self, groupe):
         # fill groupe firm
+        wd = self.app.wd
         wd.find_element_by_name("group_name").click()
         wd.find_element_by_name("group_name").clear()
         wd.find_element_by_name("group_name").send_keys(groupe.name)
@@ -26,6 +25,13 @@ class GroupHelper:
         wd.find_element_by_name("group_footer").click()
         wd.find_element_by_name("group_footer").clear()
         wd.find_element_by_name("group_footer").send_keys(groupe.footer)
+
+    def create(self, groupe):
+        wd = self.app.wd
+        self.open_group_page()
+        # init group creation
+        wd.find_element_by_name("new").click()
+        self.fild_contact(groupe)
         # submin groupe creation
         wd.find_element_by_name("submit").click()
         self.return_to_groups_page()
@@ -38,3 +44,13 @@ class GroupHelper:
         #submit deletion
         wd.find_element_by_name("delete").click()
         self.return_to_groups_page()
+
+    def modefi_group (self):
+        wd = self.app.wd
+        self.open_group_page()
+        # selest first groupe
+        wd.find_element_by_name("selected[]").click()
+        # submit edit
+        wd.find_element_by_name("edit").click()
+        # fill groupe firm
+        self.fild_contact()
