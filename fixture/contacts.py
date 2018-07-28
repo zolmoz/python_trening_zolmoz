@@ -4,6 +4,10 @@ class ContactHelper:
     def __init__(self,app):
         self.app = app
 
+    def open_home_page(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("home").click()
+
     def newcontact(self, Contactfilld):
         wd = self.app.wd
         # open add contact form
@@ -80,4 +84,4 @@ class ContactHelper:
         # submit contact
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         # open contact form
-        wd.find_element_by_link_text("home").click()
+        sels.open_home_page ()
