@@ -5,6 +5,7 @@ from fixture.contacts import ContactHelper
 from fixture.groupdelete import GroupDelete
 from fixture.groupeedit import GroupEdit
 from fixture.contactdelete import ContactDelete
+from fixture.contactedit import ContactEdit
 
 
 
@@ -18,6 +19,7 @@ class Application:
         self.groupdelete = GroupDelete(self)
         self.groupeedit = GroupEdit(self)
         self.contactdelete = ContactDelete(self)
+        self.contactedit = ContactEdit(self)
 
 
     def open_home_page(self):

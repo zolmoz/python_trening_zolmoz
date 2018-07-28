@@ -8,11 +8,8 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_link_text("home").click()
 
-    def newcontact(self, Contactfilld):
+    def fild_contact(self, Contactfilld):
         wd = self.app.wd
-        # open add contact form
-        wd.find_element_by_link_text("add new").click()
-        # fill contact
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(Contactfilld.firstname)
@@ -81,7 +78,14 @@ class ContactHelper:
         wd.find_element_by_name("notes").click()
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(Contactfilld.notes)
+
+    def newcontact(self, Contactfilld):
+        wd = self.app.wd
+        # open add contact form
+        wd.find_element_by_link_text("add new").click()
+        # fill contact
+        self.fild_contact(Contactfilld)
         # submit contact
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         # open contact form
-        sels.open_home_page ()
+        self.open_home_page ()
