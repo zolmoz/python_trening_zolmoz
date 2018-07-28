@@ -7,7 +7,7 @@ class ContactDelete:
     def delete_first_contact(self):
         wd = self.app.wd
         ContactHelper.open_home_page (self)
-        # selest first groupe
+        # selest first contact
         wd.find_element_by_name("selected[]").click()
         # submit deletion
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
@@ -17,7 +17,7 @@ class ContactDelete:
     def delete_all_contact(self):
         wd = self.app.wd
         ContactHelper.open_home_page(self)
-        # selest first groupe
+        # selest first contact
         wd.find_element_by_id("MassCB").click()
         # submit deletion
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
@@ -27,7 +27,7 @@ class ContactDelete:
     def delete_Rose_contact(self):
         wd = self.app.wd
         ContactHelper.open_home_page(self)
-        # selest first groupe
+        # selest first contact
         wd.find_element_by_css_selector("[title^='Select (Mia Rose)']").click()
         # submit deletion
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
