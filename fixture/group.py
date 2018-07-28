@@ -45,7 +45,7 @@ class GroupHelper:
         wd.find_element_by_name("delete").click()
         self.return_to_groups_page()
 
-    def modefi_group (self):
+    def modefi_first_groupe(self, groupe):
         wd = self.app.wd
         self.open_group_page()
         # selest first groupe
@@ -53,4 +53,7 @@ class GroupHelper:
         # submit edit
         wd.find_element_by_name("edit").click()
         # fill groupe firm
-        self.fild_contact()
+        self.fild_contact(groupe)
+        # submit update
+        wd.find_element_by_name("update").click()
+        self.return_to_groups_page()
