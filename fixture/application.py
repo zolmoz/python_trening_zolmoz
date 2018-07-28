@@ -3,6 +3,7 @@ from fixture.sesion import SessionHelper
 from fixture.group import GroupHelper
 from fixture.contacts import ContactHelper
 from fixture.groupdelete import GroupDelete
+from fixture.groupeedit import GroupEdit
 
 
 
@@ -14,6 +15,7 @@ class Application:
         self.group = GroupHelper(self)
         self.contacts = ContactHelper(self)
         self.groupdelete = GroupDelete(self)
+        self.groupeedit = GroupEdit(self)
 
 
     def open_home_page(self):
