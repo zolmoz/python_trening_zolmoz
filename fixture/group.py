@@ -1,5 +1,3 @@
-from selenium.webdriver.support.ui import Select
-
 class GroupHelper:
     def __init__(self,app):
         self.app = app
@@ -12,8 +10,6 @@ class GroupHelper:
         wd = self.app.wd
         # return to groupse page
         wd.find_element_by_link_text("groups").click()
-
-
 
     def fild_contact (self, groupe):
         # fill groupe firm
@@ -38,25 +34,7 @@ class GroupHelper:
         wd.find_element_by_name("submit").click()
         self.return_to_groups_page()
 
-    def delete_first_groupe (self):
-        wd = self.app.wd
-        self.open_group_page()
-        #selest first groupe
-        wd.find_element_by_name("selected[]").click()
-        #submit deletion
-        wd.find_element_by_name("delete").click()
-        self.return_to_groups_page()
 
-    def delete_all_groupe(self):
-        wd = self.app.wd
-        self.open_group_page()
-        # selest first groupe
-        elements = wd.find_elements_by_name("selected[]")
-        for e in elements:
-            e.click()
-        # submit deletion
-        wd.find_element_by_name("delete").click()
-        self.return_to_groups_page()
 
     def modefi_first_groupe(self, groupe):
         wd = self.app.wd
@@ -83,4 +61,3 @@ class GroupHelper:
         # submit update
         wd.find_element_by_name("update").click()
         self.return_to_groups_page()
-    

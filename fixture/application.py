@@ -2,6 +2,7 @@ from selenium.webdriver.firefox.webdriver import WebDriver
 from fixture.sesion import SessionHelper
 from fixture.group import GroupHelper
 from fixture.contacts import ContactHelper
+from fixture.groupdelete import GroupDelete
 
 
 
@@ -12,6 +13,7 @@ class Application:
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contacts = ContactHelper(self)
+        self.groupdelete = GroupDelete(self)
 
 
     def open_home_page(self):
