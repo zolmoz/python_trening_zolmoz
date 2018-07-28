@@ -13,13 +13,13 @@ def app(request):
 
 def test_test_ad_group(app):
     success = True
-    app.login(user_name="admin", password="secret")
+    app.session.login(user_name="admin", password="secret")
     app.create_groupe( Groupe(name="group2", header="group2", footer="group2"))
-    app.logout()
+    app.session.logout()
 
 def test_test_ad_empty_group(app):
     success = True
-    app.login( user_name="admin", password="secret")
+    app.session.login( user_name="admin", password="secret")
     app.create_groupe(Groupe (name=" ", header=" ", footer=" "))
-    app.logout()
+    app.session.logout()
 
