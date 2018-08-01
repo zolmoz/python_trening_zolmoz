@@ -35,5 +35,58 @@ class GroupHelper:
         self.return_to_groups_page()
 
 
+    def delete_first_groupe (self):
+        wd = self.app.wd
+        self.open_group_page()
+        #selest first groupe
+        wd.find_element_by_name("selected[]").click()
+        #submit deletion
+        wd.find_element_by_name("delete").click()
+        self.return_to_groups_page()
+
+    def delete_cirilic_groupe (self):
+        wd = self.app.wd
+        self.open_group_page()
+        #selest first groupe
+        wd.find_element_by_css_selector("[title^='Select (группа3)']").click()
+        #submit deletion
+        wd.find_element_by_name("delete").click()
+        self.return_to_groups_page()
 
 
+    def delete_all_groupe(self):
+        wd = self.app.wd
+        self.open_group_page()
+        # selest first groupe
+        elements = wd.find_elements_by_name("selected[]")
+        for e in elements:
+            e.click()
+        # submit deletion
+        wd.find_element_by_name("delete").click()
+        self.return_to_groups_page()
+
+    def modefi_first_groupe(self, groupe):
+        wd = self.app.wd
+        self.open_group_page()
+        # selest first groupe
+        wd.find_element_by_name("selected[]").click()
+        # submit edit
+        wd.find_element_by_name("edit").click()
+        # fill groupe firm
+        self.fild_contact(groupe)
+        # submit update
+        wd.find_element_by_name("update").click()
+        self.return_to_groups_page()
+
+    def modefi_first_empty_groupe(self, groupe):
+        wd = self.app.wd
+        self.open_group_page()
+        # selest first groupe
+        wd.find_element_by_css_selector("[title^='Select ( )']").click()
+        # submit edit
+        wd.find_element_by_name("edit").click()
+        # fill groupe firm
+        self.fild_contact(groupe)
+        # submit update
+        wd.find_element_by_name("update").click()
+        self.return_to_groups_page()

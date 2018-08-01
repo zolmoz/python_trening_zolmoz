@@ -89,3 +89,45 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         # open contact form
         self.open_home_page ()
+
+
+    def delete_first_contact(self):
+        wd = self.app.wd
+        self.open_home_page ()
+        # selest first contact
+        wd.find_element_by_name("selected[]").click()
+        # submit deletion
+        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
+        self.open_home_page()
+
+    def delete_all_contact(self):
+        wd = self.app.wd
+        self.open_home_page()
+        # selest first contact
+        wd.find_element_by_id("MassCB").click()
+        # submit deletion
+        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
+        self.open_home_page()
+
+    def delete_Rose_contact(self):
+        wd = self.app.wd
+        self.open_home_page()
+        # selest first contact
+        wd.find_element_by_css_selector("[title^='Select (Mia Rose)']").click()
+        # submit deletion
+        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
+        self.open_home_page()
+
+    def edit_first_contact(self, Contactfilld):
+        wd = self.app.wd
+        self.open_home_page()
+        # selest first contact
+        wd.find_element_by_css_selector("[title^='Edit']").click()
+        # fill contact firm
+        self.fild_contact(Contactfilld)
+        # submit update
+        wd.find_element_by_name("update").click()
+        self.open_home_page()
