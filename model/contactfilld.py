@@ -1,6 +1,6 @@
 class Contactfilld:
-    def __init__(self, firstname, middlename, lastname, nickename, title, company, address, home, mobile, work,
-                   fax, email1, email2, email3, homepage, selectbday, selectbmonthe, byear, selectaday, selectamothe, ayear, address2, phone2, notes):
+    def __init__(self, firstname=None, middlename=None, lastname=None, nickename=None, title=None, company=None, address=None, home=None, mobile=None, work=None,
+                   fax=None, email1=None, email2=None, email3=None, homepage=None, selectbday=None, selectbmonthe=None, byear=None, selectaday=None, selectamothe=None, ayear=None, address2=None, phone2=None, notes=None):
         self.firstname = firstname
         self.middlename = middlename
         self.lastname = lastname

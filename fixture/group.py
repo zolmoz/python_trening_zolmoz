@@ -86,9 +86,6 @@ class GroupHelper:
         self.return_to_groups_page()
 
 
-
-
-
     def modefi_first_empty_groupe(self, groupe):
         wd = self.app.wd
         self.open_group_page()
@@ -101,3 +98,9 @@ class GroupHelper:
         # submit update
         wd.find_element_by_name("update").click()
         self.return_to_groups_page()
+
+
+    def count(self):
+        wd = self.app.wd
+        self.open_group_page()
+        return len(wd.find_elements_by_name("selected[]"))
