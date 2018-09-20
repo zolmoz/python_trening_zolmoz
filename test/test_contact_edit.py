@@ -1,12 +1,28 @@
 from model.contactfilld import Contactfilld
 
 
-def test_edit_first_emty_contact(app):
+def test_edit_first_contact(app):
     success = True
-    try:
-        app.contacts.edit_first_contact(Contactfilld( firstname="Ray", middlename="Ray", lastname="Ray", nickename="Ray", title="Rosw Ray",ompany="Ray", address="Ray", home="1234", mobile="5678", work="90123", fax="4567",email1="1admin@z.ru", email2="2admin@z.ru", email3="3admin@z.ru", homepage="ya.ry", selectbday="3",selectbmonthe="4", byear="1989", selectaday="8", selectamothe="12", ayear="2000", address2="Ray", phone2="Ray", notes="Ray"))
-        return True
-    except:
-        app.contacts.open_home_page()
-        return False
+    if app.contacts.count() == 0:
+        app.contacts.newcontact(
+            Contactfilld(firstname="", middlename="", lastname="", nickename="", title="",
+                         company="", address="", home="", mobile="", work="", fax="",
+                         email1="", email2="", email3="", homepage="",
+                         selectbday="0",
+                         selectbmonthe="0", byear="", selectaday="0", selectamothe="0", ayear="",
+                         address2="", phone2="", notes=""))
+    old_groups_contact = app.contacts.get_contact_list()
+    contact = Contactfilld(firstname="Mia", middlename="Rk", lastname="Rose", nickename="Rose", title="Rosw comp",
+                         company="Rose", address="ertyui", home="1234", mobile="5678", work="90123", fax="4567",
+                         email1="1admin@z.ru", email2="2admin@z.ru", email3="3admin@z.ru", homepage="ya.ry",
+                         selectbday="3",
+                         selectbmonthe="4", byear="1989", selectaday="8", selectamothe="12", ayear="2000",
+                         address2="dferesdfe", phone2="rererr", notes="fgwewerewrw")
+    contact.id = old_groups_contact[0].id
+    app.contacts.edit_first_contact(contact)
+    new_groups_contacts = app.contacts.get_contact_list()
+    assert len(old_groups_contact) == len(new_groups_contacts)
+    old_groups_contact[0] =contact
+    assert sorted(old_groups_contact, key=Contactfilld.id_or_max) == sorted(new_groups_contacts, key=Contactfilld.id_or_max)
+
 

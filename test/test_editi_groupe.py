@@ -16,9 +16,10 @@ from model.groupe import Groupe
 
 def test_modefi_first_groupe(app):
     success = True
-    old_groups = app.group.get_group_list()
+
     if app.group.count() == 0:
         app.group.create(Groupe(name="efsef", header="sfd", footer="adwd"))
+    old_groups = app.group.get_group_list()
     group = Groupe(header="test")
     group.id=old_groups[0].id
     app.group.modefi_first_groupe(group)

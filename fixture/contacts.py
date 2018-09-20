@@ -144,7 +144,7 @@ class ContactHelper:
         self.open_home_page()
         contact = []
         for element in wd.find_elements_by_name("entry"):
-            text = element.text
-            id = element.find_element_by_name("selected[]").get_attribute("value")
-            contact.append(Contactfilld(lastname=text, id=id))
+            cells = element.find_elements_by_tag_name("td")
+            id = cells[0].find_element_by_tag_name("input").get_attribute("value")
+            contact.append(Contactfilld(firstname=cells[2].text, lastname=cells[1].text, id=id))
         return contact

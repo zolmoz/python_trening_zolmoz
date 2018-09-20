@@ -10,22 +10,35 @@ def test_delete_first_contact_01(app):
                          selectbday="3",
                          selectbmonthe="4", byear="1989", selectaday="8", selectamothe="12", ayear="2000",
                          address2="dferesdfe", phone2="rererr", notes="fgwewerewrw"))
+    old_groups_contact = app.contacts.get_contact_list()
     app.contacts.delete_first_contact()
+    new_groups_contacts = app.contacts.get_contact_list()
+    assert len(old_groups_contact) - 1 == len(new_groups_contacts)
+    old_groups_contact[0:1] = []
+    assert old_groups_contact == new_groups_contacts
 
 
 def test_delete_rose_contact_02(app):
     success = True
+    old_groups_contact = app.contacts.get_contact_list()
     try:
         app.contacts.delete_Rose_contact()
         return True
     except:
         app.contacts.open_home_page()
         return False
+    new_groups_contacts = app.contacts.get_contact_list()
+    assert len(old_groups_contact) - 1 == len(new_groups_contacts)
+    old_groups_contact[0:1] = []
+    assert old_groups_contact == new_groups_contacts
 
 
 def test_delete_all_contact_03(app):
     success = True
+    old_groups_contact = app.contacts.get_contact_list()
     if not app.contacts.count() == 0:
         app.contacts.delete_all_contact()
     else:
         app.contacts.open_home_page()
+    new_groups_contacts = app.contacts.get_contact_list()
+    assert len(old_groups_contact) - len(old_groups_contact) == len(new_groups_contacts)

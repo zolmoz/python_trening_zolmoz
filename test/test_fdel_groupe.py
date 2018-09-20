@@ -3,9 +3,9 @@ from model.groupe import Groupe
 
 def test_delete_first_groupe_01(app):
     success = True
-    old_groups = app.group.get_group_list()
     if app.group.count() == 0:
         app.group.create(Groupe(name="group2", header="group2", footer="group2"))
+    old_groups = app.group.get_group_list()
     app.group.delete_first_groupe()
     new_groups = app.group.get_group_list()
     assert len(old_groups) - 1 == len(new_groups)

@@ -19,23 +19,35 @@ def test_ad_contact_01(app):
 
 def test_ad_contact_02_empty(app):
     success = True
-    app.contacts.newcontact(Contactfilld(firstname=" ", middlename=" ", lastname=" ", nickename=" ",
-                                             title=" ",
-                                             company=" ", address=" ", home=" ", mobile=" ", work=" ",
-                                             fax=" ",
-                                             email1=" ", email2=" ", email3=" ",
-                                             homepage=" ", selectbday="0",
-                                             selectbmonthe="0", byear=" ", selectaday="0", selectamothe="0",
-                                             ayear=" ", address2=" ", phone2=" ", notes=" "))
+    old_groups_contact = app.contacts.get_contact_list()
+    contact = Contactfilld(firstname="", middlename="", lastname="", nickename="",
+                                             title="",
+                                             company="", address="", home="", mobile="", work="",
+                                             fax="",
+                                             email1="", email2="", email3="",
+                                             homepage="", selectbday="0",
+                                             selectbmonthe="0", byear="", selectaday="0", selectamothe="0",
+                                             ayear="", address2="", phone2="", notes="")
+    app.contacts.newcontact(contact)
+    new_groups_contacts = app.contacts.get_contact_list()
+    assert len(old_groups_contact) + 1 == len(new_groups_contacts)
+    old_groups_contact.append(contact)
+    assert sorted(old_groups_contact, key=Contactfilld.id_or_max) == sorted(new_groups_contacts,key=Contactfilld.id_or_max)
 
 
 def test_ad_contact_03_notall(app):
-    success = True
-    app.contacts.newcontact(Contactfilld(firstname="Kira", middlename=" ", lastname=" ", nickename="zzzz",
-                                             title=" ",
+    old_groups_contact = app.contacts.get_contact_list()
+    contact = Contactfilld(firstname="Kira", middlename="", lastname="", nickename="zzzz",
+                                             title="",
                                              company=" ", address="dfsfdsfsdf", home=" ", mobile=" ", work=" ",
                                              fax="7854784",
-                                             email1=" ", email2="a@z.ty", email3=" ",
-                                             homepage=" ", selectbday="0",
-                                             selectbmonthe="8", byear=" ", selectaday="18", selectamothe="0",
-                                             ayear=" ", address2=" ", phone2="788858", notes=" "))
+                                             email1="", email2="a@z.ty", email3="",
+                                             homepage="", selectbday="0",
+                                             selectbmonthe="8", byear="", selectaday="18", selectamothe="0",
+                                             ayear="", address2="", phone2="788858", notes="")
+    app.contacts.newcontact(contact)
+    new_groups_contacts = app.contacts.get_contact_list()
+    assert len(old_groups_contact) + 1 == len(new_groups_contacts)
+    old_groups_contact.append(contact)
+    assert sorted(old_groups_contact, key=Contactfilld.id_or_max) == sorted(new_groups_contacts,
+    key = Contactfilld.id_or_max)
