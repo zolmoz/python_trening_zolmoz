@@ -20,8 +20,8 @@ def test_edit_first_contact(app):
                          address2="dferesdfe", phone2="rererr", notes="fgwewerewrw")
     contact.id = old_groups_contact[0].id
     app.contacts.edit_first_contact(contact)
+    assert len(old_groups_contact) == app.contacts.count()
     new_groups_contacts = app.contacts.get_contact_list()
-    assert len(old_groups_contact) == len(new_groups_contacts)
     old_groups_contact[0] =contact
     assert sorted(old_groups_contact, key=Contactfilld.id_or_max) == sorted(new_groups_contacts, key=Contactfilld.id_or_max)
 
