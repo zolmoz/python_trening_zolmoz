@@ -12,7 +12,6 @@ def random_numbers(prefix,maxlen):
     symbol = string.digits + " "*2
     return prefix + "".join([random.choice(symbol) for i in range(random.randrange(maxlen))])
 
-
 testdata = [Contactfilld(firstname="Mia",
                           middlename="Rk",
                           lastname="Rose",
