@@ -1,5 +1,6 @@
 from selenium.webdriver.support.ui import Select
 from model.contactfilld import Contactfilld
+import  re
 
 class ContactHelper:
     def __init__(self,app):
@@ -35,13 +36,13 @@ class ContactHelper:
         wd.find_element_by_name("address").send_keys(Contactfilld.address)
         wd.find_element_by_name("home").click()
         wd.find_element_by_name("home").clear()
-        wd.find_element_by_name("home").send_keys(Contactfilld.home)
+        wd.find_element_by_name("home").send_keys(Contactfilld.homephone)
         wd.find_element_by_name("mobile").click()
         wd.find_element_by_name("mobile").clear()
-        wd.find_element_by_name("mobile").send_keys(Contactfilld.mobile)
+        wd.find_element_by_name("mobile").send_keys(Contactfilld.mobilephone)
         wd.find_element_by_name("work").click()
         wd.find_element_by_name("work").clear()
-        wd.find_element_by_name("work").send_keys(Contactfilld.work)
+        wd.find_element_by_name("work").send_keys(Contactfilld.workphone)
         wd.find_element_by_name("fax").click()
         wd.find_element_by_name("fax").clear()
         wd.find_element_by_name("fax").send_keys(Contactfilld.fax)
@@ -76,7 +77,7 @@ class ContactHelper:
         wd.find_element_by_name("address2").send_keys(Contactfilld.address2)
         wd.find_element_by_name("phone2").click()
         wd.find_element_by_name("phone2").clear()
-        wd.find_element_by_name("phone2").send_keys(Contactfilld.phone2)
+        wd.find_element_by_name("phone2").send_keys(Contactfilld.secondaryphone)
         wd.find_element_by_name("notes").click()
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(Contactfilld.notes)
@@ -91,7 +92,7 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         # open contact form
         self.open_home_page ()
-        self.group_cache = None
+        self.contact_cache = None
 
     def select_contact_by_index(self, index):
         wd = self.app.wd
@@ -109,9 +110,45 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
         self.open_home_page()
-        self.group_cache = None
+        self.contact_cache = None
 
 
+    def open_contact_to_edit_by_index(self,index):
+        wd = self.app.wd
+        self.open_home_page()
+        row = wd.find_elements_by_name("entry")[index]
+        cell = row.find_elements_by_tag_name("td")[7]
+        cell.find_element_by_tag_name("a").click()
+
+    def open_contact_view_by_index(self,index):
+        wd = self.app.wd
+        self.open_home_page()
+        row = wd.find_elements_by_name("entry")[index]
+        cell = row.find_elements_by_tag_name("td")[6]
+        cell.find_element_by_tag_name("a").click()
+
+    def get_contact_info_from_edit_page(self,index):
+        wd = self.app.wd
+        self.open_contact_to_edit_by_index(index)
+        firstname = wd.find_element_by_name("firstname").get_attribute("value")
+        lastname = wd.find_element_by_name("lastname").get_attribute("value")
+        id = wd.find_element_by_name("id").get_attribute("value")
+        homephone = wd.find_element_by_name("home").get_attribute("value")
+        mobilephone = wd.find_element_by_name("mobile").get_attribute("value")
+        workphone = wd.find_element_by_name("work").get_attribute("value")
+        secondaryphone = wd.find_element_by_name("phone2").get_attribute("value")
+        return Contactfilld(firstname=firstname,lastname=lastname,id=id,homephone=homephone,mobilephone=mobilephone,
+                       workphone=workphone,secondaryphone=secondaryphone)
+
+    def get_contact_info_from_viwe_page(self,index):
+        wd = self.app.wd
+        self.open_contact_view_by_index(index)
+        text = wd.find_element_by_id("content").text
+        homephone = re.search("H: (.*)", text).group(1)
+        workphone = re.search("W: (.*)", text).group(1)
+        mobilephone = re.search("M: (.*)", text).group(1)
+        secondaryphone = re.search("P: (.*)", text).group(1)
+        return Contactfilld(homephone=homephone, mobilephone=mobilephone,workphone=workphone, secondaryphone=secondaryphone)
 
 
 
@@ -124,7 +161,7 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
         self.open_home_page()
-        self.group_cache = None
+        self.contact_cache = None
 
     def delete_Rose_contact(self):
         wd = self.app.wd
@@ -135,7 +172,7 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
         self.open_home_page()
-        self.group_cache = None
+        self.contact_cache = None
 
     def select_group_by_index_modify(self,index):
         wd = self.app.wd
@@ -156,7 +193,7 @@ class ContactHelper:
         # submit update
         wd.find_element_by_name("update").click()
         self.open_home_page()
-        self.group_cache = None
+        self.contact_cache = None
 
     def count(self):
         wd = self.app.wd
@@ -169,9 +206,15 @@ class ContactHelper:
         if self.contact_cache is None:
             wd = self.app.wd
             self.open_home_page()
-            self.group_cache = []
+            self.contact_cache = []
             for element in wd.find_elements_by_name("entry"):
                 cells = element.find_elements_by_tag_name("td")
+                firstname = cells[2].text
+                lastname = cells[1].text
                 id = cells[0].find_element_by_tag_name("input").get_attribute("value")
-                self.group_cache.append(Contactfilld(firstname=cells[2].text, lastname=cells[1].text, id=id))
-        return  list(self.group_cache)
+                all_phones = cells[5].text.splitlines()
+                self.contact_cache.append(Contactfilld(firstname=firstname, lastname=lastname, id=id,
+                                                       homephone=all_phones[0], mobilephone=all_phones[1],
+                                                       workphone=all_phones[2], secondaryphone=all_phones[3]))
+        return  list(self.contact_cache)
+

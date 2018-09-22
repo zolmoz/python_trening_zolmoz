@@ -6,11 +6,11 @@ def test_delete_some_contact_01(app):
     if app.contacts.count() == 0:
         app.contacts.newcontact(
             Contactfilld(firstname="Mia", middlename="Rk", lastname="Rose", nickename="Rose", title="Rosw comp",
-                         company="Rose", address="ertyui", home="1234", mobile="5678", work="90123", fax="4567",
+                         company="Rose", address="ertyui", homephone="1234", mobilephone="5678", workphone="90123", fax="4567",
                          email1="1admin@z.ru", email2="2admin@z.ru", email3="3admin@z.ru", homepage="ya.ry",
                          selectbday="3",
                          selectbmonthe="4", byear="1989", selectaday="8", selectamothe="12", ayear="2000",
-                         address2="dferesdfe", phone2="rererr", notes="fgwewerewrw"))
+                         address2="dferesdfe", secondaryphone="rererr", notes="fgwewerewrw"))
     old_groups_contact = app.contacts.get_contact_list()
     index = randrange(len(old_groups_contact))
     app.contacts.delete_by_index(index)

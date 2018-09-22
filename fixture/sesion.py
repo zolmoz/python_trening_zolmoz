@@ -25,7 +25,11 @@ class SessionHelper:
 
     def is_logget_in_as(self, user_name):
         wd = self.app.wd
-        return wd.find_element_by_xpath("//div/div[1]/form/b").text == "("+user_name+")"
+        return  self.get_logged_user() == user_name
+
+    def get_logged_user(self):
+        wd = self.app.wd
+        return wd.find_element_by_xpath("//div/div[1]/form/b").text[1:-1]
 
     def ensure_logout(self):
         wd = self.app.wd
