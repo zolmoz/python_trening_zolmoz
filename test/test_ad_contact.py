@@ -15,33 +15,13 @@ def test_ad_contact_01(app):
     assert sorted(old_groups_contact, key=Contactfilld.id_or_max) == sorted(new_groups_contacts, key=Contactfilld.id_or_max)
 
 
-
-
-def test_ad_contact_02_empty(app):
-    success = True
-    old_groups_contact = app.contacts.get_contact_list()
-    contact = Contactfilld(firstname="", middlename="", lastname="", nickename="",
-                                             title="",
-                                             company="", address="", homephone="", mobilephone="", workphone="",
-                                             fax="",
-                                             email1="", email2="", email3="",
-                                             homepage="", selectbday="0",
-                                             selectbmonthe="0", byear="", selectaday="0", selectamothe="0",
-                                             ayear="", address2="", secondaryphone="", notes="")
-    app.contacts.newcontact(contact)
-    assert len(old_groups_contact) + 1 == app.contacts.count()
-    new_groups_contacts = app.contacts.get_contact_list()
-    old_groups_contact.append(contact)
-    assert sorted(old_groups_contact, key=Contactfilld.id_or_max) == sorted(new_groups_contacts,key=Contactfilld.id_or_max)
-
-
-def test_ad_contact_03_notall(app):
+def test_ad_contact_02_notall(app):
     old_groups_contact = app.contacts.get_contact_list()
     contact = Contactfilld(firstname="Kira", middlename="", lastname="", nickename="zzzz",
                                              title="",
-                                             company="", address="dfsfdsfsdf", homephone="", mobilephone="", workphone="",
+                                             company="", address="dfsfdsfsdf", homephone="3324", mobilephone="=+3414", workphone="3142 33",
                                              fax="7854784",
-                                             email1="", email2="a@z.ty", email3="",
+                                             email1="v", email2="a@z.ty", email3="3admin@z.ru",
                                              homepage="", selectbday="0",
                                              selectbmonthe="8", byear="", selectaday="18", selectamothe="0",
                                              ayear="", address2="", secondaryphone="788858", notes="")
