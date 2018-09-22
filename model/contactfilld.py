@@ -4,7 +4,7 @@ class Contactfilld:
     def __init__(self, firstname=None, middlename=None, lastname=None, nickename=None, title=None, company=None, address=None,
                  homephone=None, mobilephone=None, workphone=None,
                    fax=None, email1=None, email2=None, email3=None, homepage=None, selectbday=None, selectbmonthe=None, byear=None, selectaday=None,
-                 selectamothe=None, ayear=None, address2=None, secondaryphone=None, notes=None, id=None):
+                 selectamothe=None, ayear=None, address2=None, secondaryphone=None, notes=None, id=None,all_phones_from_home_page=None):
         self.firstname = firstname
         self.middlename = middlename
         self.lastname = lastname
@@ -30,10 +30,11 @@ class Contactfilld:
         self.secondaryphone = secondaryphone
         self.notes = notes
         self.id = id
+        self.all_phones_from_home_page = all_phones_from_home_page
 
 
     def __repr__(self):
-        return "%s:%s:%s:%s:%s:%s:%s" % (self.id, self.firstname, self.lastname, self.homephone,self.mobilephone, self.workphone,self.secondaryphone)
+        return "%s:%s:%s:%s" % (self.id, self.firstname, self.lastname,self.all_phones_from_home_page)
 
 
 
@@ -41,15 +42,7 @@ class Contactfilld:
         return (self.id is None or other.id is None or self.id == other.id)\
                and (self.firstname is None or other.firstname is None or self.firstname == other.firstname)\
                and (self.lastname is None or other.lastname is None or self.lastname == other.lastname) \
-               and (self.homephone is None or other.homephone is None or self.homephone == other.homephone) \
-               and (self.mobilephone is None or other.mobilephone is None or self.mobilephone == other.mobilephone) \
-               and (self.workphone is None or other.workphone is None or self.workphone == other.workphone) \
-               and (self.secondaryphone is None or other.secondaryphone is None or self.secondaryphone == other.secondaryphone) \
-
-
-
-
-
+               and (self.all_phones_from_home_page is None or other.all_phones_from_home_page is None or self.all_phones_from_home_page == other.all_phones_from_home_page)
 
 
 

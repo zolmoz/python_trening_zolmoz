@@ -39,7 +39,7 @@ def test_ad_contact_03_notall(app):
     old_groups_contact = app.contacts.get_contact_list()
     contact = Contactfilld(firstname="Kira", middlename="", lastname="", nickename="zzzz",
                                              title="",
-                                             company=" ", address="dfsfdsfsdf", homephone=" ", mobilephone=" ", workphone=" ",
+                                             company="", address="dfsfdsfsdf", homephone="", mobilephone="", workphone="",
                                              fax="7854784",
                                              email1="", email2="a@z.ty", email3="",
                                              homepage="", selectbday="0",
