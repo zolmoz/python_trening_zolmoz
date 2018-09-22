@@ -2,7 +2,7 @@
 from model.groupe import Groupe
 
 
-def test_test_ad_group(app, json_groups):
+def test_test_ad_group(app,json_groups):
     group = json_groups
     old_groups = app.group.get_group_list()
     app.group.create(group)
