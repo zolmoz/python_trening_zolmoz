@@ -9,3 +9,5 @@ try:
         print(row)
 finally:
     connection.close()
+
+

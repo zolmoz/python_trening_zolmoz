@@ -1,5 +1,5 @@
 {
-  web: {
+  "web":{
     "baseURL": "http://localhost/addressbook/",
     "user_name": "admin",
     "password": "secret"
@@ -9,7 +9,5 @@
     "name": "addressbook",
     "user": "root",
     "password": ""
-
   }
-
 }
