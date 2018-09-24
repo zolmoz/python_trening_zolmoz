@@ -6,7 +6,6 @@ def test_test_ad_group(app, db, json_groups):
     group = json_groups
     old_groups = db.get_group_list()
     app.group.create(group)
-
     new_groups = db.get_group_list()
     old_groups.append(group)
     assert sorted(old_groups,key=Groupe.id_or_max) == sorted(new_groups, key=Groupe.id_or_max)

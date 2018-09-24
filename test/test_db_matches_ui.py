@@ -1,6 +1,4 @@
 from model.groupe import Groupe
-from time
-from model.contactfilld import Contactfilld
 
 
 def test_group_list(app, db):
