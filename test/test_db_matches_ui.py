@@ -1,9 +1,6 @@
 from model.groupe import Groupe
+from time
 from model.contactfilld import Contactfilld
-
-
-
-
 
 
 def test_group_list(app, db):
@@ -16,9 +13,3 @@ def test_group_list(app, db):
 
 
 
- def test_contact_list(app, db):
-    ui_list = app.contact.get_contacts_list() # список, загруженный через UI
-    db_list = db.get_contact_list()  # список, загруженный через БД
-    print("\nui_list", ui_list)
-    print("\ndb_list", db_list)
-    assert sorted(ui_list, key=Contactfilld.id_or_max) == sorted(db_list, key=Contactfilld.id_or_max)
