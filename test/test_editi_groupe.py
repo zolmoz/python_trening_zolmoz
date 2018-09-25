@@ -1,20 +1,27 @@
 from model.groupe import Groupe
-from random import randrange
+import random
 
 
-def test_modefi_some_groupe(app):
+def test_modefi_some_groupe(app,db,check_ui):
     success = True
-
-    if app.group.count() == 0:
-        app.group.create(Groupe(name="efsef", header="sfd", footer="adwd"))
-    old_groups = app.group.get_group_list()
-    index = randrange(len(old_groups))
-    group = Groupe(header="test")
-    group.id=old_groups[index].id
-    app.group.modefi_groupe_by_index(index,group)
-    assert len(old_groups) == app.group.count()
-    new_groups = app.group.get_group_list()
-    old_groups[index] =group
+    group = Groupe(name="efsef", header="sfd", footer="adwd")
+    if db.get_group_list() == 0:
+        app.group.create(group)
+    old_groups = db.get_group_list()
+    old_group = random.choice(old_groups)
+    group.id = old_group.id
+    app.group.modefi_groupe_by_id(old_group.id, group)
+    new_groups = db.get_group_list()
+    old_groups.remove(old_group)
+    old_groups.append(group)
     assert sorted(old_groups, key=Groupe.id_or_max) == sorted(new_groups, key=Groupe.id_or_max)
+    if check_ui:
+        assert sorted(new_groups, key=Groupe.id_or_max) == sorted(app.group.get_group_list(), key=Groupe.id_or_max)
+
+
+
+
+
+
 
 

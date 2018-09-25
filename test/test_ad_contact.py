@@ -3,14 +3,20 @@ from model.contactfilld import Contactfilld
 
 
 
-def test_ad_contact_01(app,json_contact):
+def test_ad_contact_01(app, db, json_contact,check_ui):
     success = True
-    old_groups_contact = app.contacts.get_contact_list()
-    app.contacts.newcontact(json_contact)
-    assert len(old_groups_contact) + 1 == app.contacts.count()
-    new_groups_contacts = app.contacts.get_contact_list()
-    old_groups_contact.append(json_contact)
-    assert sorted(old_groups_contact, key=Contactfilld.id_or_max) == sorted(new_groups_contacts, key=Contactfilld.id_or_max)
+    contact = json_contact
+    old_contacts = db.get_contact_list()
+    app.contacts.newcontact(contact)
+    new_contacts = db.get_contact_list()
+    old_contacts.append(contact)
+    assert sorted(old_contacts, key=Contactfilld.id_or_max) == sorted(new_contacts, key=Contactfilld.id_or_max)
+    if check_ui:
+        assert sorted(new_contacts, key=Contactfilld.id_or_max()) == sorted(app.contacts.get_contact_list(), key=Contactfilld.id_or_max())
+
+
+
+
 
 
 

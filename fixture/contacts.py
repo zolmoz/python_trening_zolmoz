@@ -1,6 +1,6 @@
 #from selenium.webdriver.support.ui import Select
 from model.contactfilld import Contactfilld
-import  re
+import re
 
 class ContactHelper:
     def __init__(self,app):
@@ -179,9 +179,31 @@ class ContactHelper:
         self.open_home_page()
         self.contact_cache = None
 
-    def select_group_by_index_modify(self,index):
+    def select_contact_by_index_modify(self, index):
         wd = self.app.wd
         wd.find_elements_by_css_selector("[title^='Edit']")[index].click()
+
+
+    def open_contact_to_edit_by_id(self, id):
+        wd = self.app.wd
+        self.open_home_page()
+        wd.find_element_by_xpath("//table[@id='maintable']//a[@href='edit.php?id=%s']" % id).click()
+
+    def select_contact_by_id(self,id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
+    def delete_contact_by_id(self, id):
+        wd = self.app.wd
+        self.open_home_page()
+        # selest first contact
+        self.select_contact_by_id(id)
+        # submit deletion
+        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
+        self.open_home_page()
+        self.contact_cache = None
+
 
 
     def edit_first_contact(self):
@@ -191,11 +213,21 @@ class ContactHelper:
     def edit_contact_by_index(self, index, Contactfilld):
         wd = self.app.wd
         self.open_home_page()
-        # selest first contact
-        self.select_group_by_index_modify(index)
-        # fill contact firm
-        self.fild_contact(Contactfilld)
-        # submit update
+        self.select_contact_by_id(id)  # click on checkbox
+        self.open_contact_to_edit_by_id(id)  # click on pencil
+        self.newcontact(Contactfilld)
+        wd.find_element_by_name("update").click()
+        self.open_home_page()
+        self.contact_cash = None
+
+
+    def edit_contact_by_id(self, id, Contactfilld):
+        wd = self.app.wd
+        self.select_contact_by_id(id)
+        # open modification form
+        wd.find_element_by_xpath("//a[contains(@href, %s) and contains(@href, 'edit.php?id=')]" % id).click()
+        self.newcontact(Contactfilld)
+        # submit modification
         wd.find_element_by_name("update").click()
         self.open_home_page()
         self.contact_cache = None
