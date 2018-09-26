@@ -41,20 +41,6 @@ class Dbfixture:
             cursor.close()
         return list
 
-    def get_contact_list2(self):
-        self.list_contacts = []
-        cursor = self.connection.cursor()
-        try:
-            cursor.execute("select id, firstname, lastname, address, home, mobile, work, phone2, email, email2, email3"
-                           " from addressbook ")
-            for row in cursor.fetchall():
-                (id, firstname, lastname, address, email, email2, email3, mobile, home, work, phone2) = row
-                self.list_contacts.append(Contactfilld(firstname=firstname, id=id, lastname=lastname, address=address,
-                                                  homephone=home, mobilephone=mobile, workphone=work, secondaryphone=phone2,
-                                                     email1=email, email2=email2, email3=email3))
-        finally:
-            cursor.close()
-        return list(self.list_contacts)
 
     def destroy(self):
         self.connection.close()
