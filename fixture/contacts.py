@@ -214,8 +214,8 @@ class ContactHelper:
     def edit_contact_by_index(self, index, Contactfilld):
         wd = self.app.wd
         self.open_home_page()
-        self.select_contact_by_id(id)  # click on checkbox
-        self.open_contact_to_edit_by_id(id)  # click on pencil
+        self.select_contact_by_id(id)
+        self.open_contact_to_edit_by_id(id)
         self.fild_contact(Contactfilld)
         wd.find_element_by_name("update").click()
         self.open_home_page()
@@ -224,9 +224,7 @@ class ContactHelper:
 
     def edit_contact_by_id(self, id, Contactfilld):
         wd = self.app.wd
-        #self.open_home_page()
-        #self.select_contact_by_id(id)  # click on checkbox
-        self.open_contact_to_edit_by_id(id)  # click on pencil
+        self.open_contact_to_edit_by_id(id)
         self.fild_contact(Contactfilld)
         wd.find_element_by_name("update").click()
         self.open_home_page()
