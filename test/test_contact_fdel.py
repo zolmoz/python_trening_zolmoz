@@ -23,9 +23,9 @@ def test_delete_some_contact_01(app,db,check_ui):
                                                                             key=Contactfilld.id_or_max())
 
 
-def test_delete_rose_contact_02(app):
+def test_delete_rose_contact_02(app,db,check_ui):
     success = True
-    old_groups_contact = app.contacts.get_contact_list()
+    old_groups_contact = db.get_contact_list()
     try:
         app.contacts.delete_Rose_contact()
         return True
@@ -33,16 +33,23 @@ def test_delete_rose_contact_02(app):
         app.contacts.open_home_page()
         return False
     assert len(old_groups_contact) - 1 == app.contacts.count()
-    new_groups_contacts = app.contacts.get_contact_list()
+    new_groups_contacts = db.get_contact_list()
     old_groups_contact[0:1] = []
     assert old_groups_contact == new_groups_contacts
+    if check_ui:
+        assert sorted(new_contacts, key=Contactfilld.id_or_max()) == sorted(app.contacts.get_contact_list(),
+                                                                            key=Contactfilld.id_or_max())
 
 
-def test_delete_all_contact_03(app):
+def test_delete_all_contact_03(app,db,check_ui):
     success = True
-    old_groups_contact = app.contacts.get_contact_list()
-    if not app.contacts.count() == 0:
+    old_groups_contact = db.get_contact_list()
+    if not db.get_contact_list() == 0:
         app.contacts.delete_all_contact()
     else:
         app.contacts.open_home_page()
     assert len(old_groups_contact) - len(old_groups_contact) == app.contacts.count()
+    new_contacts = db.get_group_list()
+    if check_ui:
+        assert sorted(new_contacts, key=Contactfilld.id_or_max()) == sorted(app.contacts.get_contact_list(),
+                                                                            key=Contactfilld.id_or_max())

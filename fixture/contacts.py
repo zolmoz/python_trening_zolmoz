@@ -186,11 +186,12 @@ class ContactHelper:
 
     def open_contact_to_edit_by_id(self, id):
         wd = self.app.wd
-        self.open_home_page()
+
         wd.find_element_by_xpath("//table[@id='maintable']//a[@href='edit.php?id=%s']" % id).click()
 
     def select_contact_by_id(self,id):
         wd = self.app.wd
+
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
 
     def delete_contact_by_id(self, id):
@@ -215,7 +216,7 @@ class ContactHelper:
         self.open_home_page()
         self.select_contact_by_id(id)  # click on checkbox
         self.open_contact_to_edit_by_id(id)  # click on pencil
-        self.newcontact(Contactfilld)
+        self.fild_contact(Contactfilld)
         wd.find_element_by_name("update").click()
         self.open_home_page()
         self.contact_cash = None
@@ -223,14 +224,13 @@ class ContactHelper:
 
     def edit_contact_by_id(self, id, Contactfilld):
         wd = self.app.wd
-        self.select_contact_by_id(id)
-        # open modification form
-        wd.find_element_by_xpath("//a[contains(@href, %s) and contains(@href, 'edit.php?id=')]" % id).click()
-        self.newcontact(Contactfilld)
-        # submit modification
+        #self.open_home_page()
+        #self.select_contact_by_id(id)  # click on checkbox
+        self.open_contact_to_edit_by_id(id)  # click on pencil
+        self.fild_contact(Contactfilld)
         wd.find_element_by_name("update").click()
         self.open_home_page()
-        self.contact_cache = None
+        self.contact_cash = None
 
     def count(self):
         wd = self.app.wd
