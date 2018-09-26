@@ -20,7 +20,7 @@ def test_add_contact_to_group(app, db, orm):
                          address2="dferesdfe", secondaryphone="rererr", notes="fgwewerewrw"))
         contacts = orm.get_contacts_not_in_group(group)
     contact = random.choice(contacts)
-    app.contact.add_contact_to_group(contact, group)
+    app.contacts.add_contact_to_group(contact, group)
     contacts_in_group = orm.get_contacts_in_group(group)
     assert contact in contacts_in_group, "Contact id=%s не добавлен id=%s" % (contact.id, group.id)
 

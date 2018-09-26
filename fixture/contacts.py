@@ -1,4 +1,5 @@
 #from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.select import Select
 from model.contactfilld import Contactfilld
 import re
 
@@ -191,7 +192,6 @@ class ContactHelper:
 
     def select_contact_by_id(self,id):
         wd = self.app.wd
-
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
 
     def delete_contact_by_id(self, id):
@@ -254,4 +254,25 @@ class ContactHelper:
                                                        all_phones_from_home_page=all_phones,
                                                        all_email_from_home_page=all_email, address=address))
         return  list(self.contact_cache)
+
+    def select_by_xpath(self, xpath, text):
+        if text is not None:
+            wd = self.app.wd
+            select_element = Select(wd.find_element_by_xpath(xpath))
+            select_element.select_by_value(text)
+
+    def add_contact_to_group(self, contact, group):
+        wd = self.app.wd
+        self.open_home_page()
+        self.select_contact_by_id(contact.id)
+        self.select_by_xpath("//select[@name='to_group']", group.id)
+        wd.find_element_by_xpath("//input[@name='add']").click()
+
+    def remove_contact_from_group(self, contact, group):
+        wd = self.app.wd
+        self.open_home_page()
+        self.select_by_xpath("//select[@name='group']", group.id)
+        self.select_contact_by_id(contact.id)
+        wd.find_element_by_xpath("//input[@name='remove']").click()
+
 
