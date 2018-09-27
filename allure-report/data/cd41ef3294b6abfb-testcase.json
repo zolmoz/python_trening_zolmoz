@@ -1,0 +1,50 @@
+{
+  "uid" : "cd41ef3294b6abfb",
+  "name" : "test_test_ad_group[None:name:headernS1Je rZUHt9JcbD :footerSW  07 cXL7CF]",
+  "title" : "Test test ad group [None:name:headernS1Je rZUHt9JcbD :footerSW  07 cXL7CF]",
+  "time" : {
+    "start" : 1538069454503,
+    "stop" : 1538069456778,
+    "duration" : 2275
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "7a2f831fa6b4b806",
+    "name" : "test.test_ad_group",
+    "title" : "Test ad group"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "thread",
+    "value" : "12960-MainThread"
+  }, {
+    "name" : "host",
+    "value" : "zolmo-ПК"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_ad_group"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  } ],
+  "parameters" : [ ]
+}

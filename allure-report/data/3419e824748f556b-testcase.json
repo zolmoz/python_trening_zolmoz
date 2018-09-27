@@ -1,0 +1,95 @@
+{
+  "uid" : "3419e824748f556b",
+  "name" : "test_test_ad_group[None:name:headernS1Je rZUHt9JcbD :footerSW  07 cXL7CF]",
+  "title" : "Test test ad group [None:name:headernS1Je rZUHt9JcbD :footerSW  07 cXL7CF]",
+  "time" : {
+    "start" : 1538071316053,
+    "stop" : 1538071318256,
+    "duration" : 2203
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 3
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "cb8d7eb0992ae500",
+    "name" : "test.test_ad_group",
+    "title" : "Test ad group"
+  },
+  "steps" : [ {
+    "name" : "Given a groupe list",
+    "title" : "Given a groupe list",
+    "time" : {
+      "start" : 1538071316414,
+      "stop" : 1538071316415,
+      "duration" : 1
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "when i add groupe None:name:headernS1Je rZUHt9JcbD :footerSW  07 cXL7CF to the list",
+    "title" : "when i add groupe None:name:headernS1Je rZUHt9JcbD :footerSW  07 cXL7CF to the list",
+    "time" : {
+      "start" : 1538071316415,
+      "stop" : 1538071318253,
+      "duration" : 1838
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Then the new groupe list is equal to the list with the added groupe",
+    "title" : "Then the new groupe list is equal to the list with the added groupe",
+    "time" : {
+      "start" : 1538071318253,
+      "stop" : 1538071318255,
+      "duration" : 2
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "zolmo-ПК"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_ad_group"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "thread",
+    "value" : "13744-MainThread"
+  } ],
+  "parameters" : [ ]
+}

@@ -1,0 +1,75 @@
+{
+  "hosts" : [ {
+    "title" : "zolmo-ПК",
+    "threads" : [ {
+      "title" : "13744-MainThread",
+      "testCases" : [ {
+        "uid" : "d531661765777f88",
+        "name" : "test_test_ad_group[None:::]",
+        "title" : "Test test ad group [None:::]",
+        "time" : {
+          "start" : 1538071258799,
+          "stop" : 1538071308624,
+          "duration" : 49825
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "d41286f4ea26e380",
+        "name" : "test_test_ad_group[None:nametp6c:headerY88oSGhOV sYhCk53Nt:footer Ep]",
+        "title" : "Test test ad group [None:nametp6c:headerY88oSGhOV sYhCk53Nt:footer Ep]",
+        "time" : {
+          "start" : 1538071308695,
+          "stop" : 1538071311168,
+          "duration" : 2473
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "d1514399b5b9a4b2",
+        "name" : "test_test_ad_group[None:namek:headerZkzN :footer nXzycXtsYv8]",
+        "title" : "Test test ad group [None:namek:headerZkzN :footer nXzycXtsYv8]",
+        "time" : {
+          "start" : 1538071311170,
+          "stop" : 1538071313432,
+          "duration" : 2262
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "43964d31ace90c10",
+        "name" : "test_test_ad_group[None:namedN:header 1bR6kFPtX1:footer0JQ3s0gs  24l8]",
+        "title" : "Test test ad group [None:namedN:header 1bR6kFPtX1:footer0JQ3s0gs  24l8]",
+        "time" : {
+          "start" : 1538071313434,
+          "stop" : 1538071316047,
+          "duration" : 2613
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "3419e824748f556b",
+        "name" : "test_test_ad_group[None:name:headernS1Je rZUHt9JcbD :footerSW  07 cXL7CF]",
+        "title" : "Test test ad group [None:name:headernS1Je rZUHt9JcbD :footerSW  07 cXL7CF]",
+        "time" : {
+          "start" : 1538071316053,
+          "stop" : 1538071318256,
+          "duration" : 2203
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "4b88e861e6d234b6",
+        "name" : "test_test_ad_group[None:nameZmURG7h:header45laMvjDl c:footerbVyK7N6 BgZ ]",
+        "title" : "Test test ad group [None:nameZmURG7h:header45laMvjDl c:footerbVyK7N6 BgZ ]",
+        "time" : {
+          "start" : 1538071318259,
+          "stop" : 1538071320636,
+          "duration" : 2377
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}

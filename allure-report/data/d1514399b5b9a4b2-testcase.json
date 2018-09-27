@@ -1,0 +1,95 @@
+{
+  "uid" : "d1514399b5b9a4b2",
+  "name" : "test_test_ad_group[None:namek:headerZkzN :footer nXzycXtsYv8]",
+  "title" : "Test test ad group [None:namek:headerZkzN :footer nXzycXtsYv8]",
+  "time" : {
+    "start" : 1538071311170,
+    "stop" : 1538071313432,
+    "duration" : 2262
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 3
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "cb8d7eb0992ae500",
+    "name" : "test.test_ad_group",
+    "title" : "Test ad group"
+  },
+  "steps" : [ {
+    "name" : "Given a groupe list",
+    "title" : "Given a groupe list",
+    "time" : {
+      "start" : 1538071311323,
+      "stop" : 1538071311324,
+      "duration" : 1
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "when i add groupe None:namek:headerZkzN :footer nXzycXtsYv8 to the list",
+    "title" : "when i add groupe None:namek:headerZkzN :footer nXzycXtsYv8 to the list",
+    "time" : {
+      "start" : 1538071311324,
+      "stop" : 1538071313426,
+      "duration" : 2102
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Then the new groupe list is equal to the list with the added groupe",
+    "title" : "Then the new groupe list is equal to the list with the added groupe",
+    "time" : {
+      "start" : 1538071313426,
+      "stop" : 1538071313431,
+      "duration" : 5
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "zolmo-ПК"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_ad_group"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "thread",
+    "value" : "13744-MainThread"
+  } ],
+  "parameters" : [ ]
+}

@@ -1,0 +1,192 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1538071258799" stop="1538071320636">
+  <name>test.test_ad_group</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1538071258799" status="passed" stop="1538071308624">
+      <name>test_test_ad_group[None:::]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13744-MainThread"/>
+        <label name="host" value="zolmo-ПК"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1538071305688" status="passed" stop="1538071305690">
+          <name>Given a groupe list</name>
+          <title>Given a groupe list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071305690" status="passed" stop="1538071308623">
+          <name>when i add groupe None::: to the list</name>
+          <title>when i add groupe None::: to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071308623" status="passed" stop="1538071308624">
+          <name>Then the new groupe list is equal to the list with the added groupe</name>
+          <title>Then the new groupe list is equal to the list with the added groupe</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1538071308695" status="passed" stop="1538071311168">
+      <name>test_test_ad_group[None:nametp6c:headerY88oSGhOV sYhCk53Nt:footer Ep]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13744-MainThread"/>
+        <label name="host" value="zolmo-ПК"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1538071308851" status="passed" stop="1538071308852">
+          <name>Given a groupe list</name>
+          <title>Given a groupe list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071308852" status="passed" stop="1538071311165">
+          <name>when i add groupe None:nametp6c:headerY88oSGhOV sYhCk53Nt:footer Ep to the list</name>
+          <title>when i add groupe None:nametp6c:headerY88oSGhOV sYhCk53Nt:footer Ep to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071311165" status="passed" stop="1538071311167">
+          <name>Then the new groupe list is equal to the list with the added groupe</name>
+          <title>Then the new groupe list is equal to the list with the added groupe</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1538071311170" status="passed" stop="1538071313432">
+      <name>test_test_ad_group[None:namek:headerZkzN :footer nXzycXtsYv8]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13744-MainThread"/>
+        <label name="host" value="zolmo-ПК"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1538071311323" status="passed" stop="1538071311324">
+          <name>Given a groupe list</name>
+          <title>Given a groupe list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071311324" status="passed" stop="1538071313426">
+          <name>when i add groupe None:namek:headerZkzN :footer nXzycXtsYv8 to the list</name>
+          <title>when i add groupe None:namek:headerZkzN :footer nXzycXtsYv8 to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071313426" status="passed" stop="1538071313431">
+          <name>Then the new groupe list is equal to the list with the added groupe</name>
+          <title>Then the new groupe list is equal to the list with the added groupe</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1538071313434" status="passed" stop="1538071316047">
+      <name>test_test_ad_group[None:namedN:header 1bR6kFPtX1:footer0JQ3s0gs  24l8]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13744-MainThread"/>
+        <label name="host" value="zolmo-ПК"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1538071313768" status="passed" stop="1538071313769">
+          <name>Given a groupe list</name>
+          <title>Given a groupe list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071313769" status="passed" stop="1538071316043">
+          <name>when i add groupe None:namedN:header 1bR6kFPtX1:footer0JQ3s0gs  24l8 to the list</name>
+          <title>when i add groupe None:namedN:header 1bR6kFPtX1:footer0JQ3s0gs  24l8 to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071316043" status="passed" stop="1538071316045">
+          <name>Then the new groupe list is equal to the list with the added groupe</name>
+          <title>Then the new groupe list is equal to the list with the added groupe</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1538071316053" status="passed" stop="1538071318256">
+      <name>test_test_ad_group[None:name:headernS1Je rZUHt9JcbD :footerSW  07 cXL7CF]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13744-MainThread"/>
+        <label name="host" value="zolmo-ПК"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1538071316414" status="passed" stop="1538071316415">
+          <name>Given a groupe list</name>
+          <title>Given a groupe list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071316415" status="passed" stop="1538071318253">
+          <name>when i add groupe None:name:headernS1Je rZUHt9JcbD :footerSW  07 cXL7CF to the list</name>
+          <title>when i add groupe None:name:headernS1Je rZUHt9JcbD :footerSW  07 cXL7CF to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071318253" status="passed" stop="1538071318255">
+          <name>Then the new groupe list is equal to the list with the added groupe</name>
+          <title>Then the new groupe list is equal to the list with the added groupe</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1538071318259" status="passed" stop="1538071320636">
+      <name>test_test_ad_group[None:nameZmURG7h:header45laMvjDl c:footerbVyK7N6 BgZ ]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="13744-MainThread"/>
+        <label name="host" value="zolmo-ПК"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1538071318400" status="passed" stop="1538071318401">
+          <name>Given a groupe list</name>
+          <title>Given a groupe list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071318401" status="passed" stop="1538071320633">
+          <name>when i add groupe None:nameZmURG7h:header45laMvjDl c:footerbVyK7N6 BgZ  to the list</name>
+          <title>when i add groupe None:nameZmURG7h:header45laMvjDl c:footerbVyK7N6 BgZ  to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1538071320633" status="passed" stop="1538071320635">
+          <name>Then the new groupe list is equal to the list with the added groupe</name>
+          <title>Then the new groupe list is equal to the list with the added groupe</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>
