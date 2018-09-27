@@ -1,5 +1,6 @@
 #from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.select import Select
+
 from model.contactfilld import Contactfilld
 import re
 
@@ -109,7 +110,7 @@ class ContactHelper:
         self.select_contact_by_index(index)
         # submit deletion
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
-        wd.switch_to_alert().accept()
+        driver.switch_to.alert.accept()
         self.open_home_page()
         self.contact_cache = None
 
@@ -165,7 +166,8 @@ class ContactHelper:
         wd.find_element_by_id("MassCB").click()
         # submit deletion
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
-        wd.switch_to_alert().accept()
+        alert = wd.switch_to.alert
+        alert.accept()
         self.open_home_page()
         self.contact_cache = None
 
@@ -176,7 +178,8 @@ class ContactHelper:
         wd.find_element_by_css_selector("[title^='Select (Mia Rose)']").click()
         # submit deletion
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
-        wd.switch_to_alert().accept()
+        alert = wd.switch_to.alert
+        alert.accept()
         self.open_home_page()
         self.contact_cache = None
 
@@ -201,7 +204,8 @@ class ContactHelper:
         self.select_contact_by_id(id)
         # submit deletion
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
-        wd.switch_to_alert().accept()
+        alert = wd.switch_to.alert
+        alert.accept()
         self.open_home_page()
         self.contact_cache = None
 

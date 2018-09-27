@@ -6,3 +6,5 @@ pony
 pymysql
 mysql-connector-python-rf
 selenium.webdriver.support.select
+
+pytest-allure-adaptor
